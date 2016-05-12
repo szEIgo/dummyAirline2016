@@ -5,7 +5,6 @@
  */
 package entity;
 
-import static entity.deploy.ReservationResponseEntity_.origin;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Entity;

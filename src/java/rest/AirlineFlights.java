@@ -46,9 +46,11 @@ public class AirlineFlights {
   @Produces(MediaType.APPLICATION_JSON)
   public String getFlightsFromTo(@PathParam("from") String from, @PathParam("to") String to,
           @PathParam("date") String date, @PathParam("tickets") int tickets){
-      
-       
-      return gson.toJson(af.getFlightsFromTo(from, to, date, tickets));
+             JsonObject jb = new JsonObject();
+       jb.addProperty("airline", "Flight-Hunter Airlines");
+       jb.add("flights", gson.toJsonTree(af.getFlightsFromTo(from, to, date, tickets)));
+            
+      return gson.toJson(jb);
   }
   
   
